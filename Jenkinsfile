@@ -41,8 +41,7 @@
 						set -xe
 						docker pull "$ECR_CODE".dkr.ecr.us-east-1.amazonaws.com/antruong-assignment-ecr:latest
 						if [ ! "$(docker ps -q -f name="$CONTAINER_NAME" ]; then
-						if [ "$(docker ps -aq -f status=exited -f name="$CONTAINER_NAME")" ]; then
-						docker rm "$CONTAINER_NAME"
+						docker stop "$CONTAINER_NAME"
 						fi
 						# Run your container
 						docker run -d --name "$CONTAINER_NAME" "$ECR_CODE".dkr.ecr.us-east-1.amazonaws.com/antruong-assignment-ecr

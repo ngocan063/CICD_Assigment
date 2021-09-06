@@ -40,7 +40,7 @@
 						eval $(aws ecr get-login --region "$AWS_REGION" --no-include-email)
 						set -xe
 						docker pull "$ECR_CODE".dkr.ecr.us-east-1.amazonaws.com/antruong-assignment-ecr:latest
-						if [ ! "$(docker ps -q -f name="$CONTAINER_NAME" ]; then
+						if [ "$(docker ps -q -f name="$CONTAINER_NAME" ]; then
 						docker stop "$CONTAINER_NAME"
 						fi
 						# Run your container

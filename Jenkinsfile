@@ -3,7 +3,6 @@
 		environment {
 			AWS_REGION  = 'us-east-1'
 			ECR_CODE    = '132902260222'
-			APP_HOST    = '10.0.1.7'
 			CONTAINER_NAME = 'an_assignment'
 			}
 		stages {
